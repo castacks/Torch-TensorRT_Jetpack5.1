@@ -1,16 +1,17 @@
 #!/bin/bash
+set -ex
 
 TOP_DIR=$(cd $(dirname $0); pwd)/..
 
 if [[ -z "${USE_CXX11}" ]]; then
-    BUILD_CMD="python setup.py bdist_wheel"
+    BUILD_CMD="python3 setup.py bdist_wheel"
 else
-    BUILD_CMD="python setup.py bdist_wheel  --use-cxx11-abi"
+    BUILD_CMD="python3 setup.py bdist_wheel  --use-cxx11-abi"
 fi
 
 cd ${TOP_DIR} \
     && mkdir -p dist && cd py \
-    && pip install -r requirements.txt \
+    && pip install -r requirements_l4t.txt \
     && MAX_JOBS=1 LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8 \
         ${BUILD_CMD} $* || exit 1
 
