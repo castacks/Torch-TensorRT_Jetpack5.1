@@ -16,6 +16,7 @@ cd ${TOP_DIR} \
         ${BUILD_CMD} $* || exit 1
 
 pip3 install ipywidgets --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org
+pip3 install jupyter_contrib_nbextensions
 jupyter nbextension enable --py widgetsnbextension
 pip3 install timm
 
