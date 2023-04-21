@@ -118,6 +118,8 @@ if not FX_ONLY:
 def build_libtorchtrt_pre_cxx11_abi(develop=True, use_dist_dir=True, cxx11_abi=False):
     cmd = [BAZEL_EXE, "build"]
     cmd.append("//:libtorchtrt")
+    cmd.append("--local_ram_resources=HOST_RAM*.5")
+    cmd.append("--local_cpu_resources=HOST_CPUS-1")
     if develop:
         cmd.append("--compilation_mode=dbg")
     else:
