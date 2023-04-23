@@ -49,6 +49,7 @@ RUN pip3 install -r ./py/requirements_l4t.txt
 RUN pip3 install install ipywidgets --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host=files.pythonhosted.org
 RUN pip3 install jupyter_contrib_nbextensions timm
 RUN jupyter nbextension enable --py widgetsnbextension
+RUN pip3 install onnx
 
 # This script builds both libtorchtrt bin/lib/include tarball and the Python wheel, in dist/
 RUN ARCH=${ARCH} USE_CXX11=1 ./docker/dist-build.sh
