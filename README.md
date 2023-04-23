@@ -8,7 +8,10 @@ Modifications:
 - Dockerfile for Linux For Tegra (L4T, appropriate for Jetson) is docker/Dockerfile.l4t
 
 ```
-docker build -t theairlab/l4t-torch-tensorrt:r35.2.1-pth1.14-ttrt1.3.0  -f docker/Dockerfile.l4t --build-arg BASE=r35.2.1-pth2.0 .
+docker build -t theairlab/l4t-torch-tensorrt:r35.2.1-pth1.14-ttrt1.3.0 \
+    -f docker/Dockerfile.l4t \
+    --build-arg BASE=r35.2.1-pth2.0 .  
+    # base is pth2.0 because that's the only option r35.2.1 has; pth1.14 replaces it during build
 ```
 
 This is an extension of the AirLab "Detect-And-Avoid" project modifications. They made it work for Jetpack 4.6 on the Jetson AGX Orin. As stated above, these modifications were made to make it work for Jetpack 5.1.
