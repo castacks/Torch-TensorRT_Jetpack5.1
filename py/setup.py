@@ -377,7 +377,7 @@ setup(
     long_description_content_type="text/markdown",
     long_description=long_description,
     ext_modules=ext_modules,
-    install_requires=["torch>=1.13.0,<1.14.0", "tensorrt>=8.5.1.7,<8.6.0"],
+    install_requires=["torch>=1.13.0,<2.0.0", "tensorrt>=8.5.1.7,<8.6.0"],
     setup_requires=[],
     cmdclass={
         "install": InstallCommand,
