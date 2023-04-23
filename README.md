@@ -14,7 +14,7 @@ docker build -t theairlab/l4t-torch-tensorrt:r35.2.1-pth1.14-ttrt1.3.0 \
     # base is pth2.0 because that's the only option r35.2.1 has; pth1.14 replaces it during build
 ```
 
-This is an extension of the AirLab "Detect-And-Avoid" project modifications. They made it work for Jetpack 4.6 on the Jetson AGX Orin. As stated above, these modifications were made to make it work for Jetpack 5.1.
+This is an extension of the AirLab "Detect-And-Avoid" project modifications. They made it work for Jetpack 5.0 on the Jetson AGX Orin. As stated above, these modifications were made to make it work for Jetpack 5.1.
 
 Contact: Andrew Jong - ajong@andrew.cmu.edu
 
