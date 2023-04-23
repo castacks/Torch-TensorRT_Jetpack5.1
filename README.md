@@ -1,3 +1,22 @@
+# This Repository Is a Fork
+
+This repository is a fork of the original PyTorch wrapper for TensorRT. It has been modified specifically to work for a Jetson Xavier NX running Jetpack 5.1 (Ubuntu 20.04) on r35.2.1.
+
+Modifications:
+- r35.2.1 comes with PyTorch 2.0; Torch-TensorRT 1.3.0 is officially only compatible up till PyTorch 1.13.0. For whatever reason, for Jetpack 5.1, NVIDIA doesn't support 1.13, but has their own version [PyTorch 1.14](https://docs.nvidia.com/deeplearning/frameworks/install-pytorch-jetson-platform-release-notes/pytorch-jetson-rel.html). That said, NVIDIA's PyTorch 1.14.0 also seems to be compatible. This repository changes the Torch-TensorRT setup.py to accept PyTorch 1.14.0
+- setup.py is modified to use less CPU and RAM resources to avoid crashing part way through
+- Dockerfile for Linux For Tegra (L4T, appropriate for Jetson) is docker/Dockerfile.l4t
+
+```
+docker build -t theairlab/l4t-torch-tensorrt:r35.2.1-pth1.14-ttrt1.3.0  -f docker/Dockerfile.l4t --build-arg BASE=r35.2.1-pth2.0 .
+```
+
+This is an extension of the AirLab "Detect-And-Avoid" project modifications. They made it work for Jetpack 4.6 on the Jetson AGX Orin. As stated above, these modifications were made to make it work for Jetpack 5.1.
+
+Contact: Andrew Jong - ajong@andrew.cmu.edu
+
+---------------------
+
 # Torch-TensorRT
 
 [![Documentation](https://img.shields.io/badge/docs-master-brightgreen)](https://nvidia.github.io/Torch-TensorRT/)
